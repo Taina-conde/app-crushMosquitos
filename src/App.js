@@ -1,5 +1,6 @@
 import './App.css';
 import { Route } from 'react-router-dom';
+import InitialMenu from './Components/InitialMenu';
 
 function App() {
   return (
@@ -7,7 +8,13 @@ function App() {
       <header className="App-header">
        
       </header>
-      <Route/>
+      <Route
+        exact path = "/"
+        render = {() => (
+          <div>
+            <InitialMenu/>
+          </div>
+        )}/>
       <Route/>
       <Route/>
       <Route/>
