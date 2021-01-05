@@ -4,6 +4,13 @@ class InitialMenu extends Component {
     state = {
         value: ""
     }
+
+    handleSelect = (newValue) => {
+        this.setState({
+            value: newValue
+        })
+    }
+   
     render() {
         return (
             <div className= "container">
