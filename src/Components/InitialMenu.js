@@ -39,12 +39,7 @@ class InitialMenu extends Component {
                                     Hard
                                 </option>
                             </select>
-                            <button 
-                                type= "button"
-                                className = "btn btn-success"
-                                onClick = {() => this.handleBtnClick()}
-                            > Play
-                            </button>
+                            
 
                         </div>
                     </form>

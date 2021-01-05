@@ -1,6 +1,7 @@
 import './App.css';
 import { Route } from 'react-router-dom';
 import InitialMenu from './Components/InitialMenu';
+import PlayBtn from './Components/PlayBtn';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         render = {() => (
           <div>
             <InitialMenu/>
+            <PlayBtn/>
           </div>
         )}/>
       <Route/>
