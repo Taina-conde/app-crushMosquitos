@@ -4,9 +4,8 @@ class InitialMenu extends Component {
     render() {
         return (
             <div>
-                <div className = "images">
-                   
-                </div>
+                <h1 className = "display-1">Crush the Mosquitos</h1>
+                
                 
 
             </div>
