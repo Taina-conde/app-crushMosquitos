@@ -6,6 +6,10 @@ import PlayBtn from './Components/PlayBtn';
 import Game from './Components/Game';
 
 class App extends Component {
+  state = {
+    difficulty: ""
+
+  }
   render() {
     return (
       <div className="App">
@@ -21,7 +25,9 @@ class App extends Component {
           path = "/game"
           render = {() => (
             <div>
-              <Game/>
+              <Game
+                difficulty = {this.state.difficulty}
+              />
             </div>
           )}  
         />
