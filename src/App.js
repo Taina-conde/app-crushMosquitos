@@ -5,9 +5,7 @@ import InitialMenu from './Components/InitialMenu';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       
-      </header>
+      
       <Route
         exact path = "/"
         render = {() => (
