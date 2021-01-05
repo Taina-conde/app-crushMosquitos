@@ -2,6 +2,7 @@ import './App.css';
 import { Route } from 'react-router-dom';
 import InitialMenu from './Components/InitialMenu';
 import PlayBtn from './Components/PlayBtn';
+import Game from './Components/Game';
 
 function App() {
   return (
@@ -15,7 +16,14 @@ function App() {
             <PlayBtn/>
           </div>
         )}/>
-      <Route/>
+      <Route
+        path = "/game"
+        render = {() => (
+          <div>
+            <Game/>
+          </div>
+        )}  
+      />
       <Route/>
       <Route/>
     </div>
