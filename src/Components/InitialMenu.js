@@ -22,7 +22,7 @@ class InitialMenu extends Component {
                         <div className = "form-group">
                             <div className = "input-group">
                                 <div className = "input-group-prepend">
-                                    <label className = "input-group-text" for = "difficultyLevel">Level of difficulty</label>
+                                    <label className = "input-group-text" htmlFor = "difficultyLevel">Level of difficulty</label>
                                 </div>
                                 <select 
                                     className ="form-control" 
