@@ -8,6 +8,8 @@ class InitialMenu extends Component {
     handleSelect = (newValue) => {
         this.setState({
             value: newValue
+        }, () => {
+            this.props.onSelectDifficulty(this.state.value);
         })
     }
    

@@ -7,8 +7,11 @@ import Game from './Components/Game';
 
 class App extends Component {
   state = {
-    difficulty: ""
+    difficulty: "easy"
 
+  }
+  selectDifficulty = (diff) => {
+    this.setState({difficulty: diff})
   }
   render() {
     return (
@@ -39,6 +42,7 @@ class App extends Component {
             <div>
               <InitialMenu
                title = "You crushed them all!"
+               onSelectDifficulty = {this.selectDifficulty}
               />
             </div>
           )}
