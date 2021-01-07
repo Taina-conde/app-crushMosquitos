@@ -22,6 +22,7 @@ class App extends Component {
             <div>
               <InitialMenu
                 title = "Crush the Mosquitos"
+                onSelectDifficulty = {this.selectDifficulty}
               />
               <PlayBtn/>
             </div>
@@ -32,6 +33,7 @@ class App extends Component {
             <div>
               <Game
                 difficulty = {this.state.difficulty}
+                
               />
             </div>
           )}  
