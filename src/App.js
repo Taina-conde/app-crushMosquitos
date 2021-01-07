@@ -31,7 +31,14 @@ class App extends Component {
             </div>
           )}  
         />
-        <Route/>
+        <Route
+          path = "/victory"
+          render = {() => (
+            <div>
+              <InitialMenu/>
+            </div>
+          )}
+        />
         <Route/>
       </div>
     );
