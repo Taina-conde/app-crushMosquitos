@@ -15,7 +15,7 @@ class InitialMenu extends Component {
         return (
             <div className= "container">
                 <div className = "row">
-                    <h1 className = "col display-1">Crush the Mosquitos</h1>
+                    <h1 className = "col display-1">{this.props.title}</h1>
                 </div>
                 <div className = "row">
                     <form>

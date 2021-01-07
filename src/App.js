@@ -17,7 +17,9 @@ class App extends Component {
           exact path = "/"
           render = {() => (
             <div>
-              <InitialMenu/>
+              <InitialMenu
+                title = "Crush the Mosquitos"
+              />
               <PlayBtn/>
             </div>
           )}/>
@@ -35,7 +37,9 @@ class App extends Component {
           path = "/victory"
           render = {() => (
             <div>
-              <InitialMenu/>
+              <InitialMenu
+               title = "You crushed them all!"
+              />
             </div>
           )}
         />
