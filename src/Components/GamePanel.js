@@ -4,7 +4,7 @@ import Lives from './Lives';
 
 function GamePanel(props) {
     return (
-        <div>
+        <div className = 'panel'>
             <Timer/>
             <Lives/>
         </div>
