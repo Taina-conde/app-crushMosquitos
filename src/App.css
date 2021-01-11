@@ -27,3 +27,7 @@ body {
 .lives {
 	float: left;
 }
+.mosquito {
+	height: 100px;
+	width: 100px;
+}

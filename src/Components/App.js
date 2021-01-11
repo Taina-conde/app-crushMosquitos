@@ -9,10 +9,18 @@ class App extends Component {
   state = {
     difficulty: "easy",
     lives: 3,
+    isCrushed: false,
 
   }
   selectDifficulty = (diff) => {
     this.setState({difficulty: diff})
+  }
+  clickMosquito = () => {
+    if (this.state.isCrushed === false) {
+      this.setState({
+        isCrushed: true,
+      })
+    }
   }
   render() {
     return (
@@ -35,6 +43,7 @@ class App extends Component {
               <Game
                 difficulty = {this.state.difficulty}
                 lives = {this.state.lives}
+                onClickMosquito = {this.clickMosquito}
                 
               />
             </div>

@@ -8,6 +8,7 @@ class Game extends Component {
             <div>
                 <Mosquito
                   difficulty = {this.props.difficulty}
+                  onClickMosquito = {this.props.onClickMosquito}
                 />
 
                 <GamePanel
