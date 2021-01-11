@@ -6,7 +6,9 @@ function GamePanel(props) {
     return (
         <div className = 'panel'>
             <Timer/>
-            <Lives/>
+            <Lives
+                lives = {props.lives}
+            />
         </div>
     )
 }

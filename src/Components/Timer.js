@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 class Timer extends React.Component {
     state = {
         redirect: false,
-        time: 15
+        time: 300
     }
     componentDidMount () {
         const timer = setInterval( 

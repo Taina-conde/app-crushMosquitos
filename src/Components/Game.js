@@ -10,7 +10,9 @@ class Game extends Component {
                   difficulty = {this.props.difficulty}
                 />
 
-                <GamePanel/>
+                <GamePanel
+                    lives = {this.props.lives}
+                />
 
             </div>
         )

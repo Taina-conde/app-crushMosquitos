@@ -7,7 +7,8 @@ import Game from './Game';
 
 class App extends Component {
   state = {
-    difficulty: "easy"
+    difficulty: "easy",
+    lives: 3,
 
   }
   selectDifficulty = (diff) => {
@@ -33,6 +34,7 @@ class App extends Component {
             <div>
               <Game
                 difficulty = {this.state.difficulty}
+                lives = {this.state.lives}
                 
               />
             </div>
