@@ -26,7 +26,7 @@ class Timer extends React.Component {
         }
         return (
             <div className = "timer"> 
-                Time remaining: {this.state.time > 0 && this.state.time}
+                Time:{this.state.time > 0 && this.state.time}
             </div>
         )
     }
