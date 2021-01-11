@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../App.css';
 import { Route } from 'react-router-dom';
-import InitialMenu from './Components/InitialMenu';
-import PlayBtn from './Components/PlayBtn';
-import Game from './Components/Game';
+import InitialMenu from './InitialMenu';
+import PlayBtn from './PlayBtn';
+import Game from './Game';
 
 class App extends Component {
   state = {
