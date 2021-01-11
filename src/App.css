@@ -19,3 +19,8 @@ body {
 	background: white;
 	opacity: 0.7;
 }
+.timer {
+	float: left;
+	font-size: 2em;
+	font-weight: bold;
+}

@@ -25,7 +25,7 @@ class Timer extends React.Component {
             return <Redirect to = '/victory'/>
         }
         return (
-            <div>
+            <div className = "timer"> 
                 Time remaining: {this.state.time > 0 && this.state.time}
             </div>
         )
