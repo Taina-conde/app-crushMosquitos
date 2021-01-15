@@ -7,7 +7,7 @@ import Game from './Game';
 
 class App extends Component {
   state = {
-    difficulty: "easy",
+    difficulty: "",
     lives: 3,
     isCrushed: false,
 
@@ -33,7 +33,9 @@ class App extends Component {
                 title = "Crush the Mosquitos"
                 onSelectDifficulty = {this.selectDifficulty}
               />
-              <PlayBtn/>
+              <PlayBtn
+                difficulty = {this.state.difficulty}
+              />
             </div>
           )}/>
         <Route
