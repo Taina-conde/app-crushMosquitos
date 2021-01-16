@@ -19,31 +19,28 @@ class Game extends Component {
               time: 900
             }
         ],
-        mosquitoExists: false,
+        mosquitoExists: true,
         redirect: false
     }
-    componentDidMount() {
-        const { difficulty } = this.props
-        const selectedLevel = this.state.mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
-        const time = selectedLevel.time
-        
-        const createMosquito = setInterval (
-            () => {
-                this.setState({
-                    mosquitoExists: !this.state.mosquitoExists
-                }, () => {
-                    if (this.props.lives === 0 ){
-                        clearInterval(createMosquito)
-                        this.setState({
-                            redirect: true
-                        })
-                    }
+    handleMosquitoExists = () => {
+        this.setState({
+            mosquitoExists: !this.state.mosquitoExists
+        }, () => {
+            if (this.props.lives === 0 ){
+                    this.setState({
+                    redirect: true
                 })
-            }, time
-        )
+            }
+        })
+    }
+    handleClick = () => {
+        this.props.onClickMosquito()
     }
     
     render() {
+        const { difficulty } = this.props
+        const selectedLevel = this.state.mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
+        const time = selectedLevel.time
         
         //TODO: define height and width depending on the size of the window
         const height = 1000
@@ -68,6 +65,9 @@ class Game extends Component {
                         difficulty = {this.props.difficulty}
                         onClickMosquito = {this.props.onClickMosquito}
                         style = {styles}
+                        time = {time}
+                        onMosquitoExists ={this.handleMosquitoExists}
+                        onClick = {this.handleClick}
                     />
                 }
                 <GamePanel
