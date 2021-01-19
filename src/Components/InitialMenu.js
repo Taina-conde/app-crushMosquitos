@@ -17,9 +17,9 @@ class InitialMenu extends Component {
         return (
             <div className= "container">
                 <div className = "row">
-                    <h1 className = "col display-1">{this.props.title}</h1>
+                    <h1 className = "col display-1 text-white">{this.props.title}</h1>
                 </div>
-                <div className = "row">
+                <div className = "row justify-content-center">
                     <form>
                         <div className = "form-group">
                             <div className = "input-group">
