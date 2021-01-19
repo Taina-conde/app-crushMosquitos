@@ -4,43 +4,31 @@ import Mosquito from './Mosquito';
 import { Redirect } from 'react-router-dom';
 
 class Game extends Component {
-    state = {
-        mosquitoTime: [
-            {
-              id: "easy",
-              time: 2000
-            },
-            {
-              id: "normal",
-              time: 1300
-            },
-            {
-              id: "hard",
-              time: 900
-            }
-        ],
-        mosquitoExists: true,
-        redirect: false
+   
+    componentDidMount() {
+        
+        const {difficulty, mosquitoTime, onToggleMosquito, lives} = this.props 
+        const selectedLevel = mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
+        if (selectedLevel[0]) {
+            const time = selectedLevel[0].time
+            const createMosquito = setInterval (
+                () => {
+                    onToggleMosquito()
+                    if (lives === 0 ) {
+                        clearInterval(createMosquito)
+                    }        
+                }, time
+            )
+        }
+        
     }
-    handleMosquitoExists = () => {
-        this.setState({
-            mosquitoExists: !this.state.mosquitoExists
-        }, () => {
-            if (this.props.lives === 0 ){
-                    this.setState({
-                    redirect: true
-                })
-            }
-        })
-    }
+   
     handleClick = () => {
         this.props.onClickMosquito()
     }
     
     render() {
-        const { difficulty } = this.props
-        const selectedLevel = this.state.mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
-        const time = selectedLevel.time
+        const {redirect, mosquitoExists, difficulty, onClickMosquito, time, lives } = this.props
         
         //TODO: define height and width depending on the size of the window
         const height = 1000
@@ -53,25 +41,25 @@ class Game extends Component {
             left: x,
             top: y
         }
-        if (this.state.redirect === true ) {
+        if (redirect === true ) {
             return <Redirect to = '/gameOver'/>
         }
         
         return (
            
             <div>
-                {this.state.mosquitoExists && 
+                {mosquitoExists && 
                     <Mosquito
-                        difficulty = {this.props.difficulty}
-                        onClickMosquito = {this.props.onClickMosquito}
+                        difficulty = {difficulty}
+                        onClickMosquito = {onClickMosquito}
                         style = {styles}
                         time = {time}
-                        onMosquitoExists ={this.handleMosquitoExists}
+                    
                         onClick = {this.handleClick}
                     />
                 }
                 <GamePanel
-                    lives = {this.props.lives}
+                    lives = {lives}
                 />
 
             </div>

@@ -5,11 +5,28 @@ import InitialMenu from './InitialMenu';
 import PlayBtn from './PlayBtn';
 import Game from './Game';
 
+
 class App extends Component {
   state = {
     difficulty: "",
     lives: 3,
     isCrushed: false,
+    mosquitoTime: [
+      {
+        id: "easy",
+        time: 2000
+      },
+      {
+        id: "normal",
+        time: 1300
+      },
+      {
+        id: "hard",
+        time: 900
+      }
+  ],
+  mosquitoExists: false,
+  redirect: false
 
   }
   selectDifficulty = (diff) => {
@@ -22,7 +39,21 @@ class App extends Component {
       })
     }
   }
+  toggleMosquito = () => {
+    if (this.state.lives > 0) {
+      this.setState({
+        mosquitoExists: !this.state.mosquitoExists
+      })
+    } else {
+      this.setState( {
+        redirect: true
+      })
+    }
+  }
   render() {
+    const { difficulty, mosquitoTime, redirect, mosquitoExists, lives } = this.state
+    
+    
     return (
       <div className="App">
         <Route
@@ -34,7 +65,7 @@ class App extends Component {
                 onSelectDifficulty = {this.selectDifficulty}
               />
               <PlayBtn
-                difficulty = {this.state.difficulty}
+                difficulty = {difficulty}
               />
             </div>
           )}/>
@@ -43,9 +74,13 @@ class App extends Component {
           render = {() => (
             <div>
               <Game
-                difficulty = {this.state.difficulty}
-                lives = {this.state.lives}
+                difficulty = {difficulty}
+                lives = {lives}
                 onClickMosquito = {this.clickMosquito}
+                mosquitoTime = {mosquitoTime}
+                mosquitoExists = {mosquitoExists}
+                onToggleMosquito = {this.toggleMosquito}
+                redirect = {redirect}
                 
               />
             </div>
