@@ -1,7 +1,8 @@
 import React from 'react';
 import mosquito from '../images/mosquito.png'
     
-function Mosquito() {
+function Mosquito (props) {
+
    //TODO: define height and width depending on the size of the window
         const height = 1000
         const width = 1000
@@ -24,8 +25,17 @@ function Mosquito() {
             left: x, 
             top: y
         }
+
+        function handleClick() {
+            props.onClickMosquito()
+
+        }
         return(
-            <div className = {'mosquito' + Math.ceil(Math.random()*3).toString() + " " + side} style = {styles}>
+            <div 
+                className = {'mosquito' + Math.ceil(Math.random()*3).toString() + " " + side} 
+                style = {styles}
+                onClick = {handleClick}
+            >
                 <img className = 'img-fluid' src = {mosquito} alt = 'mosquito'/>
             </div>
         )      

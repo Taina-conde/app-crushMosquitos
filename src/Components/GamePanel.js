@@ -5,7 +5,9 @@ import Lives from './Lives';
 function GamePanel(props) {
     return (
         <div className = 'panel'>
-            <Timer/>
+            <Timer
+                lives = {props.lives}
+            />
             <Lives
                 lives = {props.lives}
             />

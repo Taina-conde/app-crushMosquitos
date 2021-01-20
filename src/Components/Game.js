@@ -7,16 +7,17 @@ class Game extends Component {
    
     componentDidMount() {
         
-        const {difficulty, mosquitoTime, onToggleMosquito, lives} = this.props 
+        const {difficulty, mosquitoTime, onToggleMosquito, lives, mosquitoExists, isCrushed} = this.props 
         const selectedLevel = mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
         if (selectedLevel[0]) {
             const time = selectedLevel[0].time
             const createMosquito = setInterval (
                 () => {
-                    onToggleMosquito()
                     if (lives === 0 ) {
                         clearInterval(createMosquito)
-                    }        
+                    }
+                    onToggleMosquito()
+         
                 }, time
             )
         }
@@ -41,7 +42,6 @@ class Game extends Component {
                     <Mosquito
                         difficulty = {difficulty}
                         onClickMosquito = {onClickMosquito}
-                    
                         onClick = {this.handleClick}
                     />
                 }

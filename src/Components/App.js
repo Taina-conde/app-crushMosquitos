@@ -14,7 +14,7 @@ class App extends Component {
     mosquitoTime: [
       {
         id: "easy",
-        time: 2000
+        time: 4000
       },
       {
         id: "normal",
@@ -40,18 +40,26 @@ class App extends Component {
     }
   }
   toggleMosquito = () => {
-    if (this.state.lives > 0) {
+    if (this.state.lives > 0 && this.state.isCrushed === true) {
       this.setState({
-        mosquitoExists: !this.state.mosquitoExists
+        mosquitoExists: !this.state.mosquitoExists,
+        isCrushed: false
+      })
+    } else if (this.state.lives > 0) {
+      this.setState({
+        mosquitoExists: !this.state.mosquitoExists,
+        lives: this.state.lives - 1,
       })
     } else {
       this.setState( {
         redirect: true
-      })
-    }
+    })
   }
+    
+  }
+  
   render() {
-    const { difficulty, mosquitoTime, redirect, mosquitoExists, lives } = this.state
+    const { difficulty, mosquitoTime, redirect, mosquitoExists, lives, isCrushed } = this.state
     
     
     return (
@@ -81,6 +89,8 @@ class App extends Component {
                 mosquitoExists = {mosquitoExists}
                 onToggleMosquito = {this.toggleMosquito}
                 redirect = {redirect}
+                isCrushed = {isCrushed}
+                
                 
               />
             </div>
