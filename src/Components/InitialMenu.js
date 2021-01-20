@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import gameOver from '../images/game_over.png'
 
 class InitialMenu extends Component {
     state = {
@@ -16,9 +17,24 @@ class InitialMenu extends Component {
     render() {
         return (
             <div className= "container">
-                <div className = "row">
-                    <h1 className = "col display-1 text-white">{this.props.title}</h1>
-                </div>
+                {this.props.title &&
+                    <div className = "row">
+                        <h1 className = "col display-1 text-white">{this.props.title}</h1>
+                    </div>
+                }
+                
+                {this.props.image && 
+                    <div className = "row justify-content-center">
+                        <img className = 'img-fluid' src = {gameOver} alt = 'gameOver'/>
+                    </div>     
+                }
+
+                {this.props.subtitle &&
+                    <div className = 'row'>
+                        <h1 className = "col display-6 text-white">{this.props.subtitle}</h1>
+                    </div>
+                }
+                
                 <div className = "row justify-content-center">
                     <form>
                         <div className = "form-group">

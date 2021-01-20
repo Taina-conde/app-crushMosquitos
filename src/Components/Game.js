@@ -7,7 +7,7 @@ class Game extends Component {
    
     componentDidMount() {
         
-        const {difficulty, mosquitoTime, onToggleMosquito, lives, mosquitoExists, isCrushed} = this.props 
+        const {difficulty, mosquitoTime, onToggleMosquito, lives} = this.props 
         const selectedLevel = mosquitoTime.filter((diffLevel) => difficulty === diffLevel.id)
         if (selectedLevel[0]) {
             const time = selectedLevel[0].time
@@ -32,7 +32,7 @@ class Game extends Component {
         const {redirect, mosquitoExists, difficulty, onClickMosquito, lives } = this.props
         
         if (redirect === true ) {
-            return <Redirect to = '/gameOver'/>
+            return <Redirect to = '/game-over'/>
         }
         
         return (

@@ -88,10 +88,7 @@ class App extends Component {
                 mosquitoTime = {mosquitoTime}
                 mosquitoExists = {mosquitoExists}
                 onToggleMosquito = {this.toggleMosquito}
-                redirect = {redirect}
-                isCrushed = {isCrushed}
-                
-                
+                redirect = {redirect} 
               />
             </div>
           )}  
@@ -104,6 +101,27 @@ class App extends Component {
                title = "You crushed them all!"
                onSelectDifficulty = {this.selectDifficulty}
               />
+              <PlayBtn
+                difficulty = {difficulty}
+              />
+            
+            </div>
+          )}
+        />
+        <Route/>
+        <Route
+          path = "/game-over"
+          render = {() => (
+            <div>
+              <InitialMenu
+                image = "Game over"
+                subtitle = "You weren't fast enough! Maybe you will get them next time..."
+                onSelectDifficulty = {this.selectDifficulty}
+              />
+              <PlayBtn
+                difficulty = {difficulty}
+              />
+           
             </div>
           )}
         />
