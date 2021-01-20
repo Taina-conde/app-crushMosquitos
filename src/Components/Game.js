@@ -28,19 +28,8 @@ class Game extends Component {
     }
     
     render() {
-        const {redirect, mosquitoExists, difficulty, onClickMosquito, time, lives } = this.props
+        const {redirect, mosquitoExists, difficulty, onClickMosquito, lives } = this.props
         
-        //TODO: define height and width depending on the size of the window
-        const height = 1000
-        const width = 1000
-        let x = Math.floor(Math.random()*width) //- 90 
-        let y = Math.floor(Math.random()*height) //- 90
-        // x = x < 0 ? 0 : x
-        // y = y < 0 ? 0 : y
-        const styles = {
-            left: x,
-            top: y
-        }
         if (redirect === true ) {
             return <Redirect to = '/gameOver'/>
         }
@@ -52,8 +41,6 @@ class Game extends Component {
                     <Mosquito
                         difficulty = {difficulty}
                         onClickMosquito = {onClickMosquito}
-                        style = {styles}
-                        time = {time}
                     
                         onClick = {this.handleClick}
                     />
