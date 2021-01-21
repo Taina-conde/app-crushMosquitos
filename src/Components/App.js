@@ -45,8 +45,8 @@ class App extends Component {
       mosquitoExists: !mosquitoExists,
       isCrushed: false
     })
-
   }
+  
 
 
 

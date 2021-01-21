@@ -1,9 +1,10 @@
 import React from 'react';
 import mosquito from '../images/mosquito.png'
     
-function Mosquito (props) {
-
-   //TODO: define height and width depending on the size of the window
+class Mosquito extends React.Component {
+    
+    render() {
+        //TODO: define height and width depending on the size of the window
         const height = window.innerHeight
         console.log("height: ",height)
         
@@ -43,6 +44,11 @@ function Mosquito (props) {
             >
                 <img className = 'img-fluid' src = {mosquito} alt = 'mosquito'/>
             </div>
-        )      
+        ) 
+
+    }
+
+
+        
 }
 export default Mosquito;

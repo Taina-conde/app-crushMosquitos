@@ -29,7 +29,7 @@ class Game extends Component {
     }
     
     render() {
-        const {redirect, mosquitoExists, difficulty, onClickMosquito, lives } = this.props
+        const {redirect, mosquitoExists, difficulty, onClickMosquito, lives, isCrushed } = this.props
         
         if (redirect === true ) {
             return <Redirect to = '/game-over'/>
