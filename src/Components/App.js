@@ -14,7 +14,7 @@ class App extends Component {
     mosquitoTime: [
       {
         id: "easy",
-        time: 4000
+        time: 6000
       },
       {
         id: "normal",
@@ -45,7 +45,7 @@ class App extends Component {
         mosquitoExists: !this.state.mosquitoExists,
         isCrushed: false
       })
-    } else if (this.state.lives > 0) {
+    } else if (this.state.lives > 0 && this.state.isCrushed === false) {
       this.setState({
         mosquitoExists: !this.state.mosquitoExists,
         lives: this.state.lives - 1,
