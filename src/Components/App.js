@@ -40,23 +40,36 @@ class App extends Component {
     }
   }
   toggleMosquito = () => {
-    if (this.state.lives > 0 && this.state.isCrushed === true) {
-      this.setState({
-        mosquitoExists: !this.state.mosquitoExists,
-        isCrushed: false
-      })
-    } else if (this.state.lives > 0 && this.state.isCrushed === false) {
-      this.setState({
-        mosquitoExists: !this.state.mosquitoExists,
-        lives: this.state.lives - 1,
-      })
-    } else {
-      this.setState( {
-        redirect: true
+    const {mosquitoExists} = this.state
+    this.setState({
+      mosquitoExists: !mosquitoExists,
+      isCrushed: false
     })
+
   }
+
+
+
+
+
+
+  //   if (this.state.lives > 0 && this.state.isCrushed === true) {
+  //     this.setState({
+  //       mosquitoExists: !this.state.mosquitoExists,
+  //       isCrushed: false
+  //     })
+  //   } else if (this.state.lives > 0 && this.state.isCrushed === false) {
+  //     this.setState({
+  //       mosquitoExists: !this.state.mosquitoExists,
+  //       lives: this.state.lives - 1,
+  //     })
+  //   } else {
+  //     this.setState( {
+  //       redirect: true
+  //   })
+  // }
     
-  }
+  // }
   
   render() {
     const { difficulty, mosquitoTime, redirect, mosquitoExists, lives, isCrushed } = this.state
