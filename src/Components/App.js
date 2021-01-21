@@ -52,24 +52,6 @@ class App extends Component {
       lives: lives - 1
     })
   }
-
-  //   if (this.state.lives > 0 && this.state.isCrushed === true) {
-  //     this.setState({
-  //       mosquitoExists: !this.state.mosquitoExists,
-  //       isCrushed: false
-  //     })
-  //   } else if (this.state.lives > 0 && this.state.isCrushed === false) {
-  //     this.setState({
-  //       mosquitoExists: !this.state.mosquitoExists,
-  //       lives: this.state.lives - 1,
-  //     })
-  //   } else {
-  //     this.setState( {
-  //       redirect: true
-  //   })
-  // }
-    
-  // }
   
   render() {
     const { 
