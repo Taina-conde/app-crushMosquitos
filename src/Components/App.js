@@ -26,7 +26,7 @@ class App extends Component {
       }
   ],
   mosquitoExists: false,
-  redirect: false
+  redirectGameOver: false
 
   }
   selectDifficulty = (diff) => {
@@ -75,7 +75,7 @@ class App extends Component {
     const { 
       difficulty, 
       mosquitoTime, 
-      redirect, 
+      redirectGameOver, 
       mosquitoExists, 
       lives, 
       isCrushed } = this.state
@@ -109,7 +109,7 @@ class App extends Component {
                 isCrushed = {isCrushed}
                 onToggleMosquito = {this.toggleMosquito}
                 onLoseLives = {this.handleLoseLives}
-                redirect = {redirect} 
+                redirectGameOver = {redirectGameOver} 
               />
             </div>
           )}  
