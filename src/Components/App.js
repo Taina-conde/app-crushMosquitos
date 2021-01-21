@@ -46,12 +46,12 @@ class App extends Component {
       isCrushed: false
     })
   }
-  
-
-
-
-
-
+  handleLoseLives = () => {
+    const {lives} = this.state
+    this.setState({
+      lives: lives - 1
+    })
+  }
 
   //   if (this.state.lives > 0 && this.state.isCrushed === true) {
   //     this.setState({
@@ -72,7 +72,13 @@ class App extends Component {
   // }
   
   render() {
-    const { difficulty, mosquitoTime, redirect, mosquitoExists, lives, isCrushed } = this.state
+    const { 
+      difficulty, 
+      mosquitoTime, 
+      redirect, 
+      mosquitoExists, 
+      lives, 
+      isCrushed } = this.state
     
     
     return (
@@ -100,7 +106,9 @@ class App extends Component {
                 onClickMosquito = {this.clickMosquito}
                 mosquitoTime = {mosquitoTime}
                 mosquitoExists = {mosquitoExists}
+                isCrushed = {isCrushed}
                 onToggleMosquito = {this.toggleMosquito}
+                onLoseLives = {this.handleLoseLives}
                 redirect = {redirect} 
               />
             </div>

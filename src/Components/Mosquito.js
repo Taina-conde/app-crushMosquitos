@@ -2,7 +2,20 @@ import React from 'react';
 import mosquito from '../images/mosquito.png'
     
 class Mosquito extends React.Component {
-    
+    componentWillUnmount() {
+        const {isCrushed} = this.props
+        
+        if (isCrushed === false) {
+            
+            this.props.onLoseLives()
+        }
+    }
+    handleClick = (e) => {
+        e.preventDefault()
+        console.log("clicked")
+        this.props.onClickMosquito()
+
+    }
     render() {
         //TODO: define height and width depending on the size of the window
         const height = window.innerHeight
@@ -31,16 +44,11 @@ class Mosquito extends React.Component {
             left: x, 
             top: y
         }
-
-        function handleClick() {
-            props.onClickMosquito()
-
-        }
         return(
             <div 
                 className = {'mosquito' + Math.ceil(Math.random()*3).toString() + " " + side} 
                 style = {styles}
-                onClick = {handleClick}
+                onClick = {this.handleClick}
             >
                 <img className = 'img-fluid' src = {mosquito} alt = 'mosquito'/>
             </div>

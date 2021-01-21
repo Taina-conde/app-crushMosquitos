@@ -29,7 +29,15 @@ class Game extends Component {
     }
     
     render() {
-        const {redirect, mosquitoExists, difficulty, onClickMosquito, lives, isCrushed } = this.props
+        const {
+            redirect, 
+            mosquitoExists, 
+            difficulty, 
+            onClickMosquito, 
+            lives, 
+            isCrushed, 
+            onLoseLives 
+        } = this.props
         
         if (redirect === true ) {
             return <Redirect to = '/game-over'/>
@@ -42,7 +50,9 @@ class Game extends Component {
                     <Mosquito
                         difficulty = {difficulty}
                         onClickMosquito = {onClickMosquito}
+                        isCrushed = {isCrushed}
                         onClick = {this.handleClick}
+                        onLoseLives = {onLoseLives}
                     />
                 }
                 <GamePanel
