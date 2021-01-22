@@ -3,6 +3,7 @@ import '../App.css';
 import { Route } from 'react-router-dom';
 import InitialMenu from './InitialMenu';
 import PlayBtn from './PlayBtn';
+import BackBtn from './BackBtn';
 import Game from './Game';
 
 
@@ -119,9 +120,7 @@ class App extends Component {
                 subtitle = "You weren't fast enough! Maybe you will get them next time..."
                 onSelectDifficulty = {this.selectDifficulty}
               />
-              <PlayBtn
-                difficulty = {difficulty}
-              />
+              <BackBtn/>
            
             </div>
           )}
