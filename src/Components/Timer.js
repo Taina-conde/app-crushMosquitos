@@ -8,6 +8,7 @@ class Timer extends React.Component {
         time: 300
     }
     componentDidMount () {
+        
         const timer = setInterval( 
                 () => {
                     this.setState({time: this.state.time -1}, () =>{

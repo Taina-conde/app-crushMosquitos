@@ -23,18 +23,15 @@ class Game extends Component {
         }
         
     }
-   
-    handleClick = () => {
-        this.props.onClickMosquito()
-    }
+    
     
     render() {
         const { 
             mosquitoExists, 
-            difficulty, 
-            onClickMosquito, 
+            difficulty,  
             lives, 
             isCrushed, 
+            onClickMosquito,
             onLoseLives 
         } = this.props
         
@@ -50,8 +47,8 @@ class Game extends Component {
                         difficulty = {difficulty}
                         onClickMosquito = {onClickMosquito}
                         isCrushed = {isCrushed}
-                        onClick = {this.handleClick}
                         onLoseLives = {onLoseLives}
+                        mosquitoExists = {mosquitoExists}
                     />
                 }
                 <GamePanel
