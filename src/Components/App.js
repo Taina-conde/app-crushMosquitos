@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../App.css';
 import { Route } from 'react-router-dom';
 import InitialMenu from './InitialMenu';
+import Level from './Level';
 import PlayBtn from './PlayBtn';
 import BackBtn from './BackBtn';
 import Game from './Game';
@@ -67,9 +68,11 @@ class App extends Component {
         <Route
           exact path = "/"
           render = {() => (
-            <div>
+            <div className= 'text-align-center'>
               <InitialMenu
                 title = "Crush the Mosquitos"
+              />
+              <Level
                 onSelectDifficulty = {this.selectDifficulty}
               />
               <PlayBtn
@@ -101,7 +104,6 @@ class App extends Component {
             <div>
               <InitialMenu
                title = "You crushed them all!"
-               onSelectDifficulty = {this.selectDifficulty}
               />
               <PlayBtn
                 difficulty = {difficulty}

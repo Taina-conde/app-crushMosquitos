@@ -11,12 +11,14 @@ class Timer extends React.Component {
         
         const timer = setInterval( 
                 () => {
-                    if (this.props.lives > 0 && this.props.time > 0) {
-
+                    if (this.props.lives > 0 && this.state.time > 0) {
+                              console.log('aqui')
+                              console.log('lives', this.props.lives)  
                         this.setState({time: this.state.time -1})
+                    } else {
+                        clearInterval(timer)
                     }
-                    
-                    }, 
+                }, 
             1000)
        
     }
