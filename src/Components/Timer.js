@@ -7,11 +7,12 @@ class Timer extends React.Component {
         redirect: false,
         time: 300
     }
+    
     componentDidMount () {
         
         const timer = setInterval( 
                 () => {
-                    if (this.props.lives > 0 && this.state.time > 0) {
+                    if (this.state.time > 0 && this.props.lives > 0) {
                               console.log('aqui')
                               console.log('lives', this.props.lives)  
                         this.setState({time: this.state.time -1})
@@ -19,9 +20,10 @@ class Timer extends React.Component {
                         clearInterval(timer)
                     }
                 }, 
-            1000)
-       
+            1000)   
     }
+   
+    
     render() {
         if (this.state.redirect === true ) {
             return <Redirect to = '/victory'/>

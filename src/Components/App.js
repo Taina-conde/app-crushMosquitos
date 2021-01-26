@@ -68,7 +68,7 @@ class App extends Component {
         <Route
           exact path = "/"
           render = {() => (
-            <div className= 'text-align-center'>
+            <div >
               <InitialMenu
                 title = "Crush the Mosquitos"
               />

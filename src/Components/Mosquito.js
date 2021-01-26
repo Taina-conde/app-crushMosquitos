@@ -30,9 +30,8 @@ function randomSide() {
         case 1 :
             side = "side1"
             break;
-        case 2:
-            side = "side2"
-            
+        default:
+            side = "side2"            
     }
     return side
 }
