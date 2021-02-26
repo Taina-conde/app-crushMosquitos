@@ -4,4 +4,8 @@ Now you are finally able to get your own back on all the mosquitos that keeps an
 
 ## Instructions
 
+To get started using this App:
 
+* clone this repository
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
