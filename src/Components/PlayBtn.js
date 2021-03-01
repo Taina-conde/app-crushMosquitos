@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function PlayBtn(props) {
     const { difficulty } = props
     return (
-        <div>
+        <div className = 'col'>
             <Link to = "/game">
                 <button 
                     type= "button"
