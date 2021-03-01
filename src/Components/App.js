@@ -68,15 +68,18 @@ class App extends Component {
         <Route
           exact path = "/"
           render = {() => (
-            <div >
+            <div className = 'container'>
               <InitialMenu
                 title = "Crush the Mosquitos"
+                className = 'row'
               />
               <Level
                 onSelectDifficulty = {this.selectDifficulty}
+                className = 'row'
               />
               <PlayBtn
                 difficulty = {difficulty}
+                className = 'row'
               />
             </div>
           )}/>
