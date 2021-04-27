@@ -5,7 +5,7 @@ export default function InitialMenu(props) {
     
     if (props.title) {
         return (
-        <div className = 'row'>
+        <div className = 'row title-row align-items-center'>
             <h1 className = "col display-1 text-white">{props.title}</h1>
         </div>
         )

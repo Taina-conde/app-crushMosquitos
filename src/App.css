@@ -48,3 +48,7 @@ body {
 .side2 {
 	transform: scaleX(-1);
 }
+.title-row {
+	height: 30rem;
+	
+}
