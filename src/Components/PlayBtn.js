@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory} from 'react-router-dom';
 
 function PlayBtn(props) {
+    const history = useHistory();
     const { difficulty } = props
     return (
         <div className = 'row'>
-<div className = 'col mt-5'>
-            <Link to = "/game">
+<           div className = 'col mt-5'>
+            
                 <button 
                     type= "button"
                     className = "btn btn-danger btn-lg"
@@ -15,9 +16,12 @@ function PlayBtn(props) {
                         ? true
                         : false
                     }
-                > Play </button>
-            </Link>
-        </div>
+                    onClick = {() => history.push('/game')}
+                > 
+                    Play 
+                </button>
+            
+            </div>
         </div>
         
     )
