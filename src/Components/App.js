@@ -53,6 +53,14 @@ class App extends Component {
       lives: lives - 1
     })
   }
+  resetGame =() =>{
+    this.setState({
+      lives: 3,
+      isCrushed: false,
+    mosquitoExists: false,
+  
+    })
+  }
   
   render() {
     const { 
@@ -79,6 +87,7 @@ class App extends Component {
               />
               <PlayBtn
                 difficulty = {difficulty}
+                onResetGame = {this.resetGame}
                 
               />
             </div>
@@ -96,6 +105,7 @@ class App extends Component {
                 isCrushed = {isCrushed}
                 onToggleMosquito = {this.toggleMosquito}
                 onLoseLives = {this.handleLoseLives}
+                
                  
               />
             </div>
@@ -110,6 +120,7 @@ class App extends Component {
               />
               <PlayBtn
                 difficulty = {difficulty}
+                onResetGame = {this.resetGame}
               />
             
             </div>
@@ -125,7 +136,7 @@ class App extends Component {
                 subtitle = "You weren't fast enough! Maybe next time..."
                 onSelectDifficulty = {this.selectDifficulty}
               />
-              <BackBtn/>
+              <BackBtn  onResetGame = {this.resetGame}/>
            
             </div>
           )}

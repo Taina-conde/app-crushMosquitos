@@ -3,7 +3,11 @@ import { useHistory} from 'react-router-dom';
 
 function PlayBtn(props) {
     const history = useHistory();
-    const { difficulty } = props
+    const { difficulty } = props;
+    function resetGameHandler() {
+        props.onResetGame()
+        history.push('/game')
+    }
     return (
         <div className = 'row'>
 <           div className = 'col mt-5'>
@@ -16,7 +20,7 @@ function PlayBtn(props) {
                         ? true
                         : false
                     }
-                    onClick = {() => history.push('/game')}
+                    onClick = {resetGameHandler}
                 > 
                     Play 
                 </button>
