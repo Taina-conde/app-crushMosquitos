@@ -1,39 +1,36 @@
-import React from 'react';
-import { Redirect } from 'react-router-dom';
+import {useState, useEffect} from 'react'
+import { useHistory } from 'react-router-dom';
 
 
-class Timer extends React.Component {
-    state = {
-        redirect: false,
-        time: 300
-    }
+const Timer = (props) =>  {
+    const history = useHistory()
+    const [time, setTime] = useState(15);
     
-    componentDidMount () {
-        
+    useEffect(() => { 
         const timer = setInterval( 
                 () => {
-                    if (this.state.time > 0 && this.props.lives > 0) {
+                    if (time > 0 && props.lives > 0) {
                               console.log('aqui')
-                              console.log('lives', this.props.lives)  
-                        this.setState({time: this.state.time -1})
+                              console.log('lives', props.lives)  
+                        setTime(time-1)
                     } else {
-                        clearInterval(timer)
+                        setTime(15)
+                        history.replace('/victory')
+                        
                     }
                 }, 
-            1000)   
-    }
+            1000) 
+        return () => clearInterval(timer)  
+    }, [time,props.lives, history ]) 
    
     
-    render() {
-        if (this.state.redirect === true ) {
-            return <Redirect to = '/victory'/>
-        }
+        
         return (
             <div className = "timer"> 
-                Time:{this.state.time > 0 && this.state.time}
+                Time:{time > 0 && time}
             </div>
         )
-    }
+    
     
 }
 

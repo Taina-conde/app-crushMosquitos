@@ -16,7 +16,7 @@ class App extends Component {
     mosquitoTime: [
       {
         id: "easy",
-        time: 6000
+        time: 2000
       },
       {
         id: "normal",
