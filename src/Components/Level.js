@@ -16,7 +16,7 @@ class Level extends Component {
    
     render() {
         return (
-            <div className= "container"> 
+            
                 <div className = "row justify-content-center">
                     <form>
                         <div className = "form-group">
@@ -52,7 +52,7 @@ class Level extends Component {
                     </form>
                 </div>
 
-            </div>
+            
         )
     }
 }

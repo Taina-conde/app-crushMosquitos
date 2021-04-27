@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function BackBtn() {
     return (
-        <div>
+        <div className = 'mt-5'>
             <Link to = "/">
                 <button 
                     type= "button"

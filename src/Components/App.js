@@ -64,22 +64,22 @@ class App extends Component {
     
     
     return (
-      <div className="App">
+      <div className = 'App'>
         <Route
           exact path = "/"
           render = {() => (
             <div className = 'container'>
               <InitialMenu
                 title = "Crush the Mosquitos"
-                className = 'row'
+                
               />
               <Level
                 onSelectDifficulty = {this.selectDifficulty}
-                className = 'row'
+                
               />
               <PlayBtn
                 difficulty = {difficulty}
-                className = 'row'
+                
               />
             </div>
           )}/>
@@ -104,7 +104,7 @@ class App extends Component {
         <Route
           path = "/victory"
           render = {() => (
-            <div>
+            <div  className = 'container'>
               <InitialMenu
                title = "You crushed them all!"
               />
@@ -119,10 +119,10 @@ class App extends Component {
         <Route
           path = "/game-over"
           render = {() => (
-            <div>
+            <div  className = 'container'>
               <InitialMenu
                 image = "Game over"
-                subtitle = "You weren't fast enough! Maybe you will get them next time..."
+                subtitle = "You weren't fast enough! Maybe next time..."
                 onSelectDifficulty = {this.selectDifficulty}
               />
               <BackBtn/>
