@@ -44,10 +44,10 @@ export function GameContextProvider(props) {
   }
   function clickMosquitoHandler() {
     if (mosquitoState.isCrushed === false ) {
-        setMosquitoState({
+        setMosquitoState(() => ({
             ...mosquitoState,
             isCrushed: true,
-        });
+        }));
     }
   }
   function toggleMosquitoExistsHandler() {
