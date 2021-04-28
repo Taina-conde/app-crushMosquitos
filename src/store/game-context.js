@@ -28,8 +28,11 @@ const GameContext = createContext({
 export function GameContextProvider(props) {
   const [difficulty, setDifficulty] = useState("");
   const [lives, setNumLives] = useState(3);
-  const [isCrushed, setIsCrused] = useState(false);
-  const [mosquitoExists, setMosquitoExists] = useState(false);
+  const [mosquitoState, setMosquitoState] = useState({
+      isCrushed: false,
+      mosquitoExists: false,
+  });
+  
 
   function selectDifficultyHandler(selectedDifficulty) {
     setDifficulty(selectedDifficulty);
@@ -40,18 +43,24 @@ export function GameContextProvider(props) {
     });
   }
   function clickMosquitoHandler() {
-    setIsCrused(true);
+    if (mosquitoState.isCrushed === false ) {
+        setMosquitoState({
+            ...mosquitoState,
+            isCrushed: true,
+        });
+    }
   }
   function toggleMosquitoExistsHandler() {
-    setMosquitoExists((previousMosquitoExists) => {
-      return !previousMosquitoExists;
-    });
+    setMosquitoState((previousMosquitoState) => ({
+      isCrused: false,
+      mosquitoExists: !previousMosquitoState.mosquitoExists
+    }));
   }
   const context = {
     difficulty,
     lives,
-    isCrushed,
-    mosquitoExists,
+    isCrushed: mosquitoState.isCrushed,
+    mosquitoExists: mosquitoState.mosquitoExists,
     selectDifficulty: selectDifficultyHandler,
     clickMosquito: clickMosquitoHandler,
     toggMosquitoExists: toggleMosquitoExistsHandler,
