@@ -28,6 +28,7 @@ class App extends Component {
       }
   ],
   mosquitoExists: false,
+ 
 
   }
   selectDifficulty = (diff) => {
