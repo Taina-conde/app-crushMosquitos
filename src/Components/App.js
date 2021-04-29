@@ -54,13 +54,22 @@ class App extends Component {
       lives: lives - 1
     })
   }
-  resetGame =() =>{
+  playGameHandler =() =>{
     this.setState({
       lives: 3,
       isCrushed: false,
       mosquitoExists: false,
       
+      
   
+    })
+  }
+  backToMenuHandler = () => {
+    this.setState({
+      lives: 3,
+      isCrushed: false,
+      mosquitoExists: false,
+      difficulty: ""
     })
   }
   
@@ -89,7 +98,7 @@ class App extends Component {
               />
               <PlayBtn
                 difficulty = {difficulty}
-                onResetGame = {this.resetGame}
+                onResetGame = {this.playGameHandler}
                 
               />
             </div>
@@ -122,7 +131,7 @@ class App extends Component {
               />
               <PlayBtn
                 difficulty = {difficulty}
-                onResetGame = {this.resetGame}
+                onResetGame = {this.playGameHandler}
               />
             
             </div>
@@ -138,7 +147,7 @@ class App extends Component {
                 subtitle = "You weren't fast enough! Maybe next time..."
                 onSelectDifficulty = {this.selectDifficulty}
               />
-              <BackBtn  onResetGame = {this.resetGame}/>
+              <BackBtn  onResetGame = {this.backToMenuHandler}/>
            
             </div>
           )}
