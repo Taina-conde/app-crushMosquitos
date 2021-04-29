@@ -59,7 +59,7 @@ class App extends Component {
       lives: 3,
       isCrushed: false,
       mosquitoExists: false,
-      difficulty: "easy"
+      
   
     })
   }
