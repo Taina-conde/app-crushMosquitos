@@ -10,7 +10,7 @@ import Game from './Game';
 
 class App extends Component {
   state = {
-    difficulty: "easy",
+    difficulty: "",
     lives: 3,
     isCrushed: false,
     mosquitoTime: [
