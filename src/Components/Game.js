@@ -26,8 +26,11 @@ const Game = (props) => {
           clearInterval(createMosquito);
         }
         onToggleMosquito();
+        return () => clearInterval(createMosquito)
       }, time);
+      return () => clearInterval(createMosquito)
     }
+    
   }, [mosquitoTime]);
 
   if (lives === 0) {

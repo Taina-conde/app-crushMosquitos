@@ -58,7 +58,8 @@ class App extends Component {
     this.setState({
       lives: 3,
       isCrushed: false,
-    mosquitoExists: false,
+      mosquitoExists: false,
+      difficulty: "easy"
   
     })
   }
