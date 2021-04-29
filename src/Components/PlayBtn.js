@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory} from 'react-router-dom';
 
-function PlayBtn(props) {
+const PlayBtn = (props) => {
     const history = useHistory();
     const { difficulty } = props;
     function resetGameHandler() {
